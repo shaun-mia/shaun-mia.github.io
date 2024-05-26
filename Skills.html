@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shaun Khan </title>
+
+    <!-- font style-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pattaya&family=Poppins&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+        integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- css files -->
+    <link rel="stylesheet" href="./styles/style.css">
+
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0px;
+            font-family: 'segoe ui';
+        }
+
+        .nav {
+            height: 50px;
+            width: 100%;
+            background-color: #4d4d4d;
+            position: relative;
+        }
+
+        .nav>.nav-header {
+            display: inline;
+        }
+
+        .nav>.nav-header>.nav-title {
+            display: inline-block;
+            font-size: 22px;
+            color: #fff;
+            padding: 10px 10px 10px 10px;
+        }
+
+        .nav>.nav-btn {
+            display: none;
+        }
+
+        .nav>.nav-links {
+            display: inline;
+            float: right;
+            font-size: 18px;
+        }
+
+        .nav>.nav-links>a {
+            display: inline-block;
+            padding: 13px 10px 13px 10px;
+            text-decoration: none;
+            color: #efefef;
+        }
+
+        .nav>.nav-links>a:hover {
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+
+        .nav>#nav-check {
+            display: none;
+        }
+
+
+        .mobile-container {
+            margin: auto;
+            height: 500px;
+            border-radius: 10px;
+        }
+
+        .Maintenance-message {
+            background-color: #b40c0c;
+            color: aliceblue;
+            text-align: center;
+            padding: 5px;
+        }
+
+        .icon {
+            display: none;
+        }
+
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+            position: relative;
+        }
+
+        .intro-container {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+
+        .p-language {
+            background-color: #333;
+        }
+
+        .p-language h3 {
+            padding: 10px;
+            color: white;
+        }
+
+
+        .Footer {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 5px;
+            background-color: #333;
+            align-items: center;
+            color: white;
+        }
+
+        .Footer .imp-links a {
+            color: white;
+            transition: 0.3s ease;
+
+        }
+
+        .Footer img {
+            width: 30%;
+            border-radius: 50%;
+        }
+
+        .Footer h2 {
+            display: none;
+        }
+
+        .Footer .imp-links a:hover {
+            color: #aa048e;
+        }
+
+        .Footer2 {
+            background-color: #333;
+            color: white;
+        }
+
+        .intro {
+            display: flex;
+            align-items: center;
+            border: 2px solid white;
+            padding: 5px;
+        }
+
+        .intro .image {
+            max-width: 30%;
+        }
+
+        .intro .details {
+            padding-left: 20px;
+        }
+
+
+        .active a:active {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a {
+            float: left;
+            color: white;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .logo {
+            background-color: #aa048e;
+            color: white;
+        }
+
+        .container {
+            width: 100%;
+            background-color: #ddd;
+        }
+
+        .skills {
+            text-align: right;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            color: white;
+        }
+
+        .html {
+            width: 90%;
+            background-color: #04AA6D;
+        }
+
+        .css {
+            width: 80%;
+            background-color: #2196F3;
+        }
+
+        .js {
+            width: 50%;
+            background-color: #f44336;
+        }
+
+        .php {
+            width: 50%;
+            background-color: #808080;
+        }
+
+
+
+        @media (max-width:800px) {
+            .nav>.nav-btn {
+                display: inline-block;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+            }
+
+            .nav>.nav-btn>label {
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                padding: 13px;
+            }
+
+            .nav>.nav-btn>label:hover,
+            .nav #nav-check:checked~.nav-btn>label {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+
+            .nav>.nav-btn>label>span {
+                display: block;
+                width: 25px;
+                height: 10px;
+                border-top: 2px solid #eee;
+            }
+
+            .nav>.nav-links {
+                position: absolute;
+                display: block;
+                width: 100%;
+                background-color: #333;
+                height: 0px;
+                transition: all 0.3s ease-in;
+                overflow-y: hidden;
+                top: 50px;
+                left: 0px;
+            }
+
+            .nav>.nav-links>a {
+                display: block;
+                width: 100%;
+            }
+
+            .nav>#nav-check:not(:checked)~.nav-links {
+                height: 0px;
+            }
+
+            .nav>#nav-check:checked~.nav-links {
+                height: calc(100vh - 50px);
+                overflow-y: auto;
+            }
+
+            .mobile-container {
+                max-width: 480px;
+                margin: auto;
+                color: white;
+                border-radius: 10px;
+            }
+
+            .intro-container {
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            .intro-container .intro {
+                display: flex;
+                flex-direction: column;
+                padding-top: 17px;
+                background-color: #333;
+            }
+
+
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+                position: relative;
+            }
+
+            .topnav #myLinks {
+                display: none;
+            }
+
+            .topnav a {
+                float: left;
+                color: white;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
+
+            .topnav a.icon {
+                display: block;
+                float: right;
+            }
+
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            .topnav a:active {
+                background-color: #ddd;
+                color: black;
+            }
+
+            .active a:active {
+                background-color: #ddd;
+                color: black;
+            }
+
+            .logo {
+                background-color: #aa048e;
+                color: white;
+            }
+
+
+
+            .Footer {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .Footer img {
+                display: none;
+            }
+
+            .Footer h2 {
+                display: block;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!-- navigation bar -->
+    <header class="header">
+        <nav>
+            <h2 class="nav-title"><a href="./index.html">SK </a></h2>
+            <ul class="navbar">
+                <li><a class="section" href="./Education.html">Education</a></li>
+                <li><a class="section" href="./Skills.html">Skills</a></li>
+                <li><a class="section" href="./Portfolio.html">Portfolio</a></li>
+                <li><a class="section" href="./Resume.html">Resume</a></li>
+                <li><a class="section" href="./Contact.html">Contact</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <!-- my skills -->
+    
+    <!-- Programming Languages -->
+
+    <section style="padding: 10px; color: white;" class="p-language">
+        <div>
+            <br>
+            <h2>Programming & Scripting Languages</h2>
+            <p>HTML</p>
+            <div class="container">
+                <div class="skills html">90%</div>
+            </div>
+
+            <p>CSS</p>
+            <div class="container">
+                <div class="skills css">80%</div>
+            </div>
+
+            <p>JavaScript</p>
+            <div class="container">
+                <div class="skills js">50%</div>
+            </div>
+
+            <p>PHP</p>
+            <div class="container">
+                <div class="skills php">50%</div>
+            </div>
+            <p>Python</p>
+            <div class="container">
+                <div class="skills css">80%</div>
+            </div>
+            <p>C</p>
+            <div class="container">
+                <div class="skills html">90%</div>
+            </div>
+            <p>C++</p>
+            <div class="container">
+                <div class="skills php">50%</div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Apps -->
+
+    <section style="margin-top: 2px; padding: 10px; color: white;" class="p-language">
+        <div>
+            <h2>Software & Applications</h2>
+            <p>MS Word</p>
+            <div class="container">
+                <div class="skills html">90%</div>
+            </div>
+
+            <p>MS Powerpoint</p>
+            <div class="container">
+                <div class="skills html">90%</div>
+            </div>
+
+            <p>MS Excel</p>
+            <div class="container">
+                <div class="skills css">80%</div>
+            </div>
+
+            <p>Photoshop</p>
+            <div class="container">
+                <div class="skills css">80%</div>
+            </div>
+            <p>Illustrator</p>
+            <div class="container">
+                <div class="skills js">50%</div>
+            </div>
+            <p>Premier Pro</p>
+            <div class="container">
+                <div class="skills js">50%</div>
+            </div>
+            <p>After Effects</p>
+            <div class="container">
+                <div class="skills php">50%</div>
+            </div>
+
+        </div>
+    </section>
+
+
+    </div>
+    </section>
+    <!-- footer section -->
+
+    <div style="padding:16px; margin-top: 5px; color: #ddd;" class="Footer">
+        <div>
+            <a href="index.html">
+                <img class="brand-image" src="image/shaun.jpg" alt="">
+            </a>
+            <h2>Shaun Mia </h2>
+        </div>
+        <div class="imp-links">
+            <h3>Important Links</h3>
+            <a href="index.html">Home</a> <br>
+            <a href="Contact.html">Contact</a> <br>
+            <a href="index.html">About</a> <br>
+            <a href="Skills.html">Skills</a> <br>
+            <a href="Portfolio.html">Projects</a>
+        </div>
+        <div class="Contact me">
+            <h3>
+                Contact me
+            </h3>
+            <p>Phone: +8801976133731</p>
+            <p>Mail: shaun15-3200@diu.edu.bd</p>
+        </div>
+    </div>
+
+    <div style="margin: 5px 0; padding: 15px 0; text-align: center;" class="Footer2">
+        All right researved | Shaun Mia
+    </div>
+</body>
+
+</html>
