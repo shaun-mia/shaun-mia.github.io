@@ -59,7 +59,7 @@ nav li {
     background-color: #333;
     display: flex;
     gap: 3%;
-    align-items: center;
+    align-items: justify;
     padding-top: 4%;
     padding-bottom: 4%;
     padding-left: 6%;
